@@ -3,9 +3,9 @@
 /**
  * Хелпер для выполнения запросов к серверу
  * @param {String} url - адрес
- * @param {String} type - тип запроса
- * @param {Object|String} data - данные для передачи
- * @param {Array} headers - заголовки
+ * @param {String} [type] - тип запроса
+ * @param {Object|String} [data] - данные для передачи
+ * @param {Array} [headers] - заголовки
  *
  * @returns {Promise}
  */
@@ -45,7 +45,7 @@ export function ajax({url, type = 'GET', data = null}, headers = []) {
 /**
  * Реализует гет запрос
  * @param {String} url - адрес
- * @param {Array} headers - заголовки
+ * @param {Array} [headers] - заголовки
  *
  * @returns {Promise}
  */

@@ -29,6 +29,12 @@ chrome.runtime.onMessage.addListener((msg, sender) => {
     }
 });
 
+chrome.alarms.create('getData', {when: Date.now(), periodInMinutes: 60});
+chrome.alarms.onAlarm.addListener(alarm => getEmployeesList());
+
+/**
+ * Заправшивает данные с серваера
+ */
 function getEmployeesList () {
     get(EMP_LIST_URL).then(
         response => {
@@ -40,8 +46,6 @@ function getEmployeesList () {
     );
 }
 
-chrome.alarms.create('getData', {when: Date.now(), periodInMinutes: 1});
-chrome.alarms.onAlarm.addListener(alarm => getEmployeesList());
 
 /**
  * Инициирует отображение сообщения при посещении сайста из списка
