@@ -1,0 +1,1 @@
+npm install babel-loader babel-core babel-preset-es2015 webpack jade jade-loader style-loader css-loader less less-loader --save-dev

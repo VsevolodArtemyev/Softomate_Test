@@ -1,0 +1,38 @@
+@bgr-color: #FFFFCC;
+
+@lg-size: 1.5;
+@md-size: 1.0;
+@sm-size: 0.8;
+
+.msg-size(@size) {
+  font-size: @size * 20px;
+}
+
+.pic-size(@size) {
+  width: 22px * @size;
+  height: 22px * @size;
+}
+
+.msg {
+  @size: @md-size; // Тут можно задать размер сообщения
+
+  background-color: @bgr-color;
+  border: 1px solid @bgr-color - #222;
+  width: 900px * @size / 2;
+  position: absolute;
+  z-index: 99999;
+  padding: 5px;
+  right: 0;
+
+  .msg-text {
+    .msg-size(@size);
+    font-family: "Trebuchet MS", Verdana, sans-serif;
+    color: rgb(156, 153, 150);
+  }
+
+  .msg-close {
+    .pic-size(@size);
+    cursor: pointer;
+    float: right;
+  }
+}

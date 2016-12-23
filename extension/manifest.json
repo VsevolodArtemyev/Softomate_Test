@@ -1,0 +1,35 @@
+{
+  "manifest_version": 2,
+  "name": "SoftomateTest",
+  "version": "1.0",
+
+  "permissions": [
+    "<all_urls>",
+    "alarms",
+    "tabs"
+  ],
+
+  "background": {
+    "scripts": ["src/background.min.js"],
+    "persistent": false
+  },
+
+  "content_scripts": [
+    {
+      "matches": ["*://www.google.com/*", "*://www.google.ru/*", "*://www.bing.com/*"],
+      "js": ["src/injectPic.min.js"],
+      "run_at": "document_end"
+    }
+  ],
+
+  "browser_action": {
+    "default_title": "Softomate",
+    "default_icon": "img/icon.png",
+    "default_popup": "popup.html"
+  },
+
+  "web_accessible_resources": [
+    "img/close.png",
+    "img/icon.png"
+  ]
+}

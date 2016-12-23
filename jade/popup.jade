@@ -1,0 +1,6 @@
+div.popup
+    - each emp in employeesList
+        div.links-table
+            span.site-name= emp.name
+            span.site-link
+                a(href="https://www.#{emp.domain}")= emp.domain
